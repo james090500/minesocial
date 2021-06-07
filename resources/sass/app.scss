@@ -1,0 +1,15 @@
+//Halfmoon
+@use 'node_modules/halfmoon/css/halfmoon.min';
+
+//Vue animation
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .25s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+//Button
+.btn-outline {
+    background-color: transparent !important;
+}
