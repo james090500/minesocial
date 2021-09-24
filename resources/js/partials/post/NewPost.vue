@@ -2,7 +2,7 @@
     <section class="bg-white bg-very-dark-dm">
         <div class="row p-20 mt-10">
             <div class="col-3 col-sm-1">
-                <img src="https://minecraftapi.net/api/v1/profile/james090500/avatar?size=256&overlay=true" class="img-fluid">
+                <ProfileImage/>
             </div>
             <div class="col-9 col-sm-11 pl-10">
                 <textarea class="form-control h-100" placeholder="Post something new" maxlength="500"></textarea>
@@ -18,3 +18,15 @@
         </div>
     </section>
 </template>
+
+<script>
+    import { mapState } from 'vuex'
+    import ProfileImage from '@/partials/user/ProfileImage'
+
+    export default {
+        computed: mapState(['user']),
+        components: {
+            ProfileImage
+        }
+    }
+</script>

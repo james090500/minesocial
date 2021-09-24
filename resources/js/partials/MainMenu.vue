@@ -1,5 +1,5 @@
 <template>
-    <header class="bg-white bg-very-dark-dm">
+    <header class="bg-white bg-very-dark-dm z-50">
         <div class="header row justify-content-center px-15">
             <div class="col-sm-3 col-lg-2">
                 <h4 class="m-0 my-5"><router-link class="text-dark text-light-dm" to="/">MineSocial</router-link></h4>
@@ -14,9 +14,9 @@
                 <div class="text-right my-5">
                     <!-- <userNotifications/> -->
                     <div class="dropdown with-arrow">
-                        <button class="btn btn-link text-dark text-light-dm" data-toggle="dropdown"><NameView/> <font-awesome-icon icon="angle-down"/></button>
+                        <button class="btn btn-link text-dark text-light-dm" data-toggle="dropdown"><NameView :profile="user"/> <font-awesome-icon icon="angle-down"/></button>
                         <div class="dropdown-menu">
-                            <router-link class="dropdown-item" to="/profile">Your Profile</router-link>
+                            <router-link class="dropdown-item" :to="`/profile/${user.uuid}`">Your Profile</router-link>
                             <router-link class="dropdown-item" to="/account/logout">Logout</router-link>
                         </div>
                     </div>
@@ -41,6 +41,7 @@
 </style>
 
 <script>
+    import { mapState } from 'vuex'
     import NameView from '@/partials/user/NameView'
 
     export default {
@@ -49,6 +50,7 @@
                 search: null
             }
         },
+        computed: mapState(['user']),
         components: {
             NameView
         }

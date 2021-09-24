@@ -3,12 +3,12 @@
         <div class="p-15 pb-0">
             <div class="row">
                 <div class="col-2 col-sm-1">
-                    <img :src="`https://minecraftapi.net/api/v1/profile/${post.author.username}/avatar?size=256&overlay=true`" class="img-fluid"/>
+                    <ProfileImage :profile="post.author.username"/>
                 </div>
                 <div class="ml-10">
                     <strong class="d-block">
                         <router-link :to="`/profile/${post.author.uuid}`">
-                            <NameView/>
+                            <NameView :profile="post.author"/>
                         </router-link>
                     </strong>
                     <small>{{Date.now() | formatDate}}</small>
@@ -53,14 +53,13 @@
 </style>
 
 <script>
+    import { mapState } from 'vuex'
+    import ProfileImage from '@/partials/user/ProfileImage'
     import NameView from '@/partials/user/NameView'
 
     export default {
         data() {
             return {
-                user: {
-                    uuid: "ba4161c03a42496c8ae07d13372f3371"
-                },
                 post: {
                     author: {
                         username: "james090500",
@@ -73,7 +72,9 @@
                 }
             }
         },
+        computed: mapState(['user']),
         components: {
+            ProfileImage,
             NameView
         }
     }

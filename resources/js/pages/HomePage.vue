@@ -2,8 +2,8 @@
     <div class="row justify-content-center mt-3">
         <div class="col-sm-4 col-lg-3 col-xl-2">
             <div class="profile text-center mt-10 p-20 bg-white bg-very-dark-dm">
-                <img :src="`https://minecraftapi.net/api/v1/profile/james090500/avatar?size=256&overlay=true`" class="profileimg img-fluid"/>
-                <h4><NameView/></h4>
+                <ProfileImage/>
+                <h4><NameView :profile="user"/></h4>
                 <GameView/>
             </div>
         </div>
@@ -20,19 +20,23 @@
 <style scoped>
     .profileimg {
         margin-bottom: 2vh;
-        /* border: 10px solid white; */
         box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.25);
     }
 </style>
 
 <script>
-    import NameView from '@/partials/user/NameView.vue';
-    import GameView from '@/partials/user/GameView.vue';
-    import NewPost from '@/partials/post/NewPost.vue';
-    import ShowPost from '@/partials/post/ShowPost.vue';
+    import { mapState } from 'vuex';
+
+    import ProfileImage from '@/partials/user/ProfileImage'
+    import NameView from '@/partials/user/NameView';
+    import GameView from '@/partials/user/GameView';
+    import NewPost from '@/partials/post/NewPost';
+    import ShowPost from '@/partials/post/ShowPost';
 
     export default {
+        computed: mapState(['user']),
         components: {
+            ProfileImage,
             NameView,
             GameView,
             NewPost,

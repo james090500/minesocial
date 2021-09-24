@@ -1,8 +1,8 @@
 <template>
     <main>
-        <div class="page-wrapper">
+        <div class="page-wrapper with-navbar">
+            <MainMenu/>
             <div class="content-wrapper">
-                <MainMenu/>
                 <transition name="fade" mode="out-in">
                     <router-view/>
                 </transition>
@@ -44,7 +44,10 @@
         watch: {
             $route: {
                 handler: function(to, from) {
-                    document.title = `${to.meta.title}  | MineSocial`
+                    if(to.meta.title != null) {
+                        document.title = `${to.meta.title}  | MineSocial`
+                    }
+
                     if(this.user && this.user.notification) {
                         this.showNotification = true;
                     }
