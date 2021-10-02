@@ -5,10 +5,13 @@
                 <h4 class="m-0 my-5"><router-link class="text-dark text-light-dm" to="/">MineSocial</router-link></h4>
             </div>
             <div class="col-sm-7 col-lg-4">
-                <div class="form-inline py-10">
-                    <input class="form-control" v-model="search" placeholder="Username"/>
-                    <button class="btn btn-primary"><font-awesome-icon icon="search"/></button>
-                </div>
+                <form class="form-inline py-10" v-on:submit.prevent="doSearch">
+                    <input class="form-control" v-model="search" placeholder="Username" :disabled="this.searching" :class="{ 'is-invalid': this.failedSearch }"/>
+                    <button type="button" class="btn btn-primary" @click="doSearch" :disabled="this.searching">
+                        <font-awesome-icon icon="search" v-if="!this.searching"/>
+                        <font-awesome-icon icon="cog" spin v-else/>
+                    </button>
+                </form>
             </div>
             <div class="col-lg-2">
                 <div class="text-right my-5">
@@ -47,7 +50,26 @@
     export default {
         data() {
             return {
-                search: null
+                search: null,
+                searching: false,
+                failedSearch: false
+            }
+        },
+        methods: {
+            doSearch() {
+                this.failedSearch = false;
+                this.searching = true;
+
+                axios.post('/api/search', {
+                    search: this.search
+                }).then((response) => {
+                    this.$router.push(`/profile/${response.data.uuid}`)
+                    this.search = null;
+                }).catch(() => {
+                    this.failedSearch = true;
+                }).finally(() => {
+                    this.searching = false;
+                })
             }
         },
         computed: mapState(['user']),

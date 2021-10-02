@@ -23,6 +23,20 @@
 <script>
     import { mapState } from 'vuex'
     export default {
+        methods: {
+            addFriend() {
+
+            },
+            acceptFriend() {
+
+            },
+            declineFriend() {
+
+            },
+            removeFriend() {
+
+            }
+        },
         props: {
             profile: Object
         },

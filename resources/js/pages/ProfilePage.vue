@@ -51,6 +51,14 @@
     import ProfileButton from '@/partials/profile/ProfileButton'
 
     export default {
+        watch: {
+            '$route.params.uuid': {
+                handler: function() {
+                    this.getProfile();
+                },
+                immediate: true
+            }
+        },
         data() {
             return {
                 uuid: null,
@@ -58,12 +66,18 @@
             }
         },
         created() {
-            this.uuid = this.$route.params.uuid;
+            this.getProfile();
+        },
+        methods: {
+            getProfile() {
+                this.profile = null;
+                this.uuid = this.$route.params.uuid;
 
-            axios.get(`/api/profile/${this.uuid}`).then((response) => {
-                this.profile = response.data
-                document.title = `${this.profile.username}  | MineSocial`
-            })
+                axios.get(`/api/profile/${this.uuid}`).then((response) => {
+                    this.profile = response.data
+                    document.title = `${this.profile.username}  | MineSocial`
+                })
+            }
         },
         components: {
             ProfileImage,

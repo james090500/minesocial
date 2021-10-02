@@ -50,8 +50,9 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     const loggedIn = localStorage.getItem('user')
     if (to.matched.some(record => record.meta.auth) && !loggedIn) {
-        next('/account/login')
-        return
+        //TODO Disabled whilst auth in the works
+        // next('/account/login')
+        // return
     }
     halfmoon.deactivateAllDropdownToggles()
     next()
