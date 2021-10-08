@@ -20,6 +20,20 @@
                     </div>
                 </div>
             </section>
+            <section>
+                <div class="row">
+                    <div class="col-md-4 pr-10">
+                        <div class="bg-white bg-very-dark-dm">
+                            Test
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <transition name="fade" mode="out-in">
+                            <ShowPost/>
+                        </transition>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </template>
@@ -49,6 +63,7 @@
     import NameView from '@/partials/user/NameView'
     import GameView from '@/partials/user/GameView'
     import ProfileButton from '@/partials/profile/ProfileButton'
+    import ShowPost from '@/partials/post/ShowPost'
 
     export default {
         watch: {
@@ -83,7 +98,8 @@
             ProfileImage,
             NameView,
             GameView,
-            ProfileButton
+            ProfileButton,
+            ShowPost
         }
     }
 </script>

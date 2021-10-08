@@ -1,5 +1,5 @@
 <template>
-    <section class="mt-10 bg-white bg-very-dark-dm">
+    <section class="bg-white bg-very-dark-dm">
         <div class="p-15 pb-0">
             <div class="row">
                 <div class="col-2 col-sm-1">
@@ -60,16 +60,7 @@
     export default {
         data() {
             return {
-                post: {
-                    author: {
-                        username: "james090500",
-                        uuid: "ba4161c03a42496c8ae07d13372f3371"
-                    },
-                    likes: {
-                        currentUser: false,
-                        total: 10
-                    }
-                }
+
             }
         },
         computed: mapState(['user']),

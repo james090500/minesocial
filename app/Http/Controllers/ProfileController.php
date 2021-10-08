@@ -41,6 +41,9 @@ class ProfileController extends Controller {
     public function getProfile(Request $request, $uuid) {
         $user = PlayerCache::get($uuid);
 
+        //Verified stuff
+        $user->verified = true;
+
         //Tempoary friends logic
         $user->friend = (object) [
             'isFriend' => false,

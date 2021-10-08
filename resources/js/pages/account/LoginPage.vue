@@ -2,7 +2,7 @@
     <div class="row justify-content-center">
         <div class="col-sm-5 div-mid">
             <h1 class="display-3">MineSocial</h1>
-            <h3>Catchup with your Minecraft Friends</h3>
+            <h3>Catch up with your Minecraft Friends!</h3>
             <hr>
             <router-link to="/account/register">
                 <button class="btn btn-secondary btn-lg">Create an account</button>

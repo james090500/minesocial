@@ -6,6 +6,24 @@
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
         <meta name="viewport" content="width=device-width" />
 
+        <!-- Primary Meta Tags -->
+        <meta name="title" content="MineSocial.net">
+        <meta name="description" content="Catch up with your Minecraft Friends!">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{config('app.url')}}">
+        <meta property="og:title" content="MineSocial.net">
+        <meta property="og:description" content="Catch up with your Minecraft Friends!">
+        <meta property="og:image" content="{{config('app.url')}}/images/capes-meta.jpg">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="{{config('app.url')}}">
+        <meta property="twitter:title" content="MineSocial.net">
+        <meta property="twitter:description" content="Catch up with your Minecraft Friends!">
+        <meta property="twitter:image" content="{{config('app.url')}}/images/capes-meta.jpg">
+
         <!-- CSS -->
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 

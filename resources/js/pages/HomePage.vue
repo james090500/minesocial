@@ -9,7 +9,7 @@
         </div>
         <div class="col-sm-6 pl-10">
             <NewPost/>
-            <transition name="fade">
+            <transition name="fade" mode="out-in">
                 <ShowPost/>
             </transition>
             <p class="text-center mt-3 p-3 mx-auto d-block post" id="noMorePosts">¯\_(ツ)_/¯ You're all caught up!</p>
