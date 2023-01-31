@@ -46,6 +46,8 @@
 
     export default {
         created() {
+            this.setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+
             document.body.style.backgroundImage = `url('/images/backgrounds/${Math.floor(Math.random() * 25) + 1}.jpg')`;
         },
         components: {
@@ -68,7 +70,15 @@
         },
         methods: {
             toggleDarkMode() {
-                window.halfmoon.toggleDarkMode()
+                let isDark = document.body.getAttribute('data-bs-theme') == "dark";
+                this.setDarkMode(!isDark);
+            },
+            setDarkMode(dark) {
+                if(dark) {
+                    document.body.setAttribute('data-bs-theme', 'dark')
+                } else {
+                    document.body.setAttribute('data-bs-theme', 'light')
+                }
             }
         }
     }

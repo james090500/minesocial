@@ -1,11 +1,11 @@
 <template>
     <div class="row justify-content-center mt-3">
         <div class="col-sm-8" v-if="profile">
-            <section class="profile-head bg-dark-dm bg-white">
+            <section class="profile-head bg-dark-dm bg-body">
                 <img class="profile-header-image img-fluid" src="https://placekitten.com/g/1920/512">
                 <div class="row px-15 pb-15">
                     <div class="col-2">
-                        <div class="bg-white bg-dark-dm profile-image">
+                        <div class="bg-body bg-dark-dm profile-image">
                             <ProfileImage class="p-10" :profile="profile.uuid"/>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
             <section>
                 <div class="row">
                     <div class="col-md-4 pr-10">
-                        <div class="bg-white bg-very-dark-dm">
+                        <div class="bg-body bg-very-dark-dm">
                             Test
                         </div>
                     </div>

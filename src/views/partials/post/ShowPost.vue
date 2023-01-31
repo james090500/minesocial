@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-white bg-very-dark-dm">
+    <section class="bg-body bg-very-dark-dm">
         <div class="p-15 pb-0">
             <div class="row">
                 <div class="col-2 col-sm-1">

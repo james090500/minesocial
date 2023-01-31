@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-white bg-very-dark-dm">
+    <section class="bg-body bg-very-dark-dm">
         <div class="row p-20 mt-10">
             <div class="col-3 col-sm-1">
                 <ProfileImage/>

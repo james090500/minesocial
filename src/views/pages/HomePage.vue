@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center mt-3">
         <div class="col-sm-4 col-lg-3 col-xl-2">
-            <div class="profile text-center mt-1 p-3 bg-white">
+            <div class="profile text-center mt-1 p-3 bg-body">
                 <ProfileImage/>
                 <h4><NameView :profile="user"/></h4>
                 <GameView/>
